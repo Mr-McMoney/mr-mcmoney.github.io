@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Everyweek</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto 100px auto; /* extra bottom space for buttons */
+      padding: 0 20px;
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    /* Container for bottom-left buttons */
+    .button-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-button:hover {
+      background-color: #357ABD;
+      transform: scale(1.05);
+    }
+
+    .nav-button svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Everyweek</h1>
+
+  <p>
+    I was president.
+
+  <div class="button-container">
+    <!-- Home button -->
+    <a href="index.html" class="nav-button" aria-label="Go to Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      Home
+    </a>
+
+    <!-- Back to About button -->
+    <a href="about.html" class="nav-button" aria-label="Back to About Me">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="transform: rotate(180deg);">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      Back to About
+    </a>
+  </div>
+
+</body>
+</html>
