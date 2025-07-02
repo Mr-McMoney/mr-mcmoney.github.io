@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Friends</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Grid container for friends */
+    .friends-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    /* Each friend card */
+    .friend-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 140px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    .friend-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Avatar images */
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #4a90e2;
+    }
+
+    /* Friend name */
+    .friend-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #4a90e2;
+    }
+
+    /* Home button */
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1000;
+    }
+
+    .home-button:hover {
+      background-color: #357ABD;
+      transform: scale(1.05);
+    }
+
+    .home-button svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Friends</h1>
+
+  <div class="friends-grid">
+    <div class="friend-card">
+      <img https://styles.redditmedia.com/t5_c7k63o/styles/profileIcon_76u9omia68ae1.jpeg?width=256&height=256&frame=1&auto=webp&crop=&s=675ff4de6304cf1e85d19d7b3b575ab8dbdd2b7d" alt="Felt389" class="avatar">
+      <div class="friend-name">Felt389</div>
+    </div>
+
+    <div class="friend-card">
+      <img https://preview.redd.it/shrubbysteak-and-then-shrubbysteak-but-dapper-and-formal-v0-ib09i253dqjd1.jpg?width=1080&crop=smart&auto=webp&s=639f3c214c0ad7d226397e7055f66350ce60d95d" alt="SHRUBBYSTEAK" class="avatar">
+      <div class="friend-name">SHRUBBYSTEAK</div>
+    </div>
+
+    <div class="friend-card">
+      <img https://i.redd.it/snoovatar/avatars/2a8c594e-37de-4378-8c20-5a719c35016a.png" alt="Friend 3" class="avatar">
+      <div class="friend-name">SCS</div>
+    </div>
+  </div>
+
+  <!-- Home button -->
+  <a href="index.html" class="home-button" aria-label="Go to Home">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+    Home
+  </a>
+
+</body>
+</html>
