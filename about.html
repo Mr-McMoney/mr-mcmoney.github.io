@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto 80px auto; /* bottom margin for button space */
+      padding: 0 20px;
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    /* Home button styles */
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1000;
+    }
+
+    .home-button:hover {
+      background-color: #357ABD;
+      transform: scale(1.05);
+    }
+
+    /* Home icon style */
+    .home-button svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white;
+    }
+        .nav-button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background-color: #4a90e2;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .nav-button:hover {
+      background-color: #357ABD;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>About Me</h1>
+
+  <p>
+    Hi! My name is Nathan McMoney. I was born in the countryside 14 years ago, and was a young prodigy. At EPSEER (Elite Private School for the Excessively Elite and Rich) I was a rising pupil and even started my own business! At the age of nine, a communist broke my Dad's spine and I was, unfortunately, left to inherit £8 billion's worth of assets and cash. I then succeeded my Dad's position in the House of Lords.
+  </p>
+  <p>
+    At around age 12, my best friend, Money McRich, contracted heart disease and had to go to the GEHEE (Great Elite Hospital for the Extremely Elite), so we moved to a penthouse apartment in the richest part of New York. I quit my position as the King's advisor and instead started advising Joe Biden. Unfortunately, he then replaced me because he thought my excellent Elite talents were going to waste on such an insignificant employment.
+  </p>
+  <p>
+    The next year, my mother passed away from muu toe (a Mysterious, Unexplained and Unexpected Turn Of Events) and I started another billion-pound business in order to cope with the stress of it all. I also bought out 5% of Apple and 7% of Microsoft and 14% of Google. 
+  </p>
+
+
+    <a href="everyweek.html" class="nav-button">In Everyweek</a>
+
+  <!-- Home button with SVG home icon -->
+  <a href="index.html" class="home-button" aria-label="Go to Home">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+    Home
+  </a>
+
+</body>
+</html>
