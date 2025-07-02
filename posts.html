@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Posts with Tag Filter</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+      color: #333;
+      min-height: 100vh;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    /* Tag filter bar */
+    .tag-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .filter-tag {
+      background-color: #4a90e2;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease;
+      text-transform: capitalize;
+      border: 2px solid transparent;
+    }
+    .filter-tag:hover {
+      background-color: #357abd;
+    }
+    .filter-tag.active {
+      background-color: white;
+      color: #4a90e2;
+      border-color: #4a90e2;
+    }
+
+    .post {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .post-date {
+      font-weight: bold;
+      color: #4a90e2;
+      margin-bottom: 10px;
+    }
+    .post-content {
+      line-height: 1.5;
+      white-space: pre-wrap;
+      margin-bottom: 15px;
+    }
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background-color: #4a90e2;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease;
+      text-transform: capitalize;
+    }
+    .tag:hover {
+      background-color: #357abd;
+    }
+    /* Home button */
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1000;
+    }
+    .home-button:hover {
+      background-color: #357abd;
+      transform: scale(1.05);
+    }
+    .home-button svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Posts</h1>
+
+  <!-- Tag filter bar -->
+  <div class="tag-filter" id="tagFilter">
+    <!-- tags inserted by JS -->
+  </div>
+
+  <!-- Posts -->
+  <div class="posts-container">
+
+    <div class="post" data-tags="quotes">
+      <div class="post-date">2025-07-02</div>
+      <div class="post-content">
+        "When I do good, I feel good.
+         And when I do bad, I feel bad.
+         That's my religion."
+              -Abraham Lincoln
+      </div>
+      <div class="tags">
+        <div class="tag">quotes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home button -->
+  <a href="index.html" class="home-button" aria-label="Go to Home">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+    Home
+  </a>
+
+  <script>
+    const posts = document.querySelectorAll('.post');
+    const tagFilter = document.getElementById('tagFilter');
+
+    // Gather all unique tags
+    const tagsSet = new Set();
+    posts.forEach(post => {
+      const tags = post.dataset.tags.split(' ');
+      tags.forEach(t => tagsSet.add(t));
+    });
+
+    const tags = Array.from(tagsSet).sort();
+
+    // Create tag filter buttons
+    tags.forEach(tag => {
+      const btn = document.createElement('div');
+      btn.className = 'filter-tag';
+      btn.textContent = tag;
+      btn.addEventListener('click', () => {
+        // Toggle filter
+        if (btn.classList.contains('active')) {
+          btn.classList.remove('active');
+          showAllPosts();
+        } else {
+          clearActiveTags();
+          btn.classList.add('active');
+          filterPostsByTag(tag);
+        }
+      });
+      tagFilter.appendChild(btn);
+    });
+
+    function clearActiveTags() {
+      document.querySelectorAll('.filter-tag.active').forEach(el => el.classList.remove('active'));
+    }
+
+    function showAllPosts() {
+      posts.forEach(post => post.style.display = '');
+    }
+
+    function filterPostsByTag(tag) {
+      posts.forEach(post => {
+        const postTags = post.dataset.tags.split(' ');
+        post.style.display = postTags.includes(tag) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
